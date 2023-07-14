@@ -21,7 +21,7 @@ import static org.apache.commons.lang3.RandomStringUtils.*;
 public class RegistrationTest {
 
     private WebDriver driver;
-    private String driverType; //добавила в код
+    private String driverType;
     public static String accessToken;
 
     String NAME = randomAlphanumeric(4, 8);

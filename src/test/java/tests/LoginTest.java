@@ -41,7 +41,7 @@ public class LoginTest {
             // Переход на тестируемый сайт
             driver.navigate().to("https://stellarburgers.nomoreparties.site/");
         } else if (driverType.equals("yandexdriver")) {
-            System.setProperty("webdriver.chrome.driver", "src/main/resources/yandexdriver");
+            System.setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver");
             // Установка пути к браузеру Yandex
             ChromeOptions options = new ChromeOptions();
             options.setBinary("/Applications/Yandex.app/Contents/MacOS/Yandex");

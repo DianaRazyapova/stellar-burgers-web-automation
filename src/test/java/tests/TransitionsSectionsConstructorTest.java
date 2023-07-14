@@ -26,25 +26,17 @@ public class TransitionsSectionsConstructorTest {
 
     @Before
     public void startUp() {
-        if (driverType.equals("chromedriver")) {
-            System.setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver");
-            ChromeOptions options = new ChromeOptions();
-            driver = new ChromeDriver(options);
-            // Установка неявного ожидания
-            driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-            // Переход на тестируемый сайт
-            driver.navigate().to("https://stellarburgers.nomoreparties.site/");
-        } else if (driverType.equals("yandexdriver")) {
-            System.setProperty("webdriver.chrome.driver", "src/main/resources/yandexdriver");
+        System.setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver");
+        ChromeOptions options = new ChromeOptions();
+        if (driverType.equals("yandexdriver")) {
             // Установка пути к браузеру Yandex
-            ChromeOptions options = new ChromeOptions();
             options.setBinary("/Applications/Yandex.app/Contents/MacOS/Yandex");
-            driver = new ChromeDriver(options);
-            // Установка неявного ожидания
-            driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-            // Переход на тестируемый сайт
-            driver.navigate().to("https://stellarburgers.nomoreparties.site/");
         }
+        driver = new ChromeDriver(options);
+        // Установка неявного ожидания
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        // Переход на тестируемый сайт
+        driver.navigate().to("https://stellarburgers.nomoreparties.site/");
     }
 
     @Parameterized.Parameters(name = "Результаты проверок браузера: {0}")
